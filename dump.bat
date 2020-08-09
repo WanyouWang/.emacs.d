@@ -1,0 +1,1 @@
+emacs --batch -q -l %HOME%/.emacs.d/dump.el
