@@ -48,23 +48,12 @@
            ("w" "Window")
 		   ("q" "Quit")
            ("c" "Comment")
+           ("p" "Project")
+           ("g" "Magit")
+           ("t" "Treemacs")
            ))
   (mapc (lambda (x)
 	  (apply #'sirius/declare-prefix x)) prefixes)
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 (provide 'sirius-which-key)

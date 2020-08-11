@@ -1,0 +1,20 @@
+(defun lisp/init-lisp ()
+  (if (not sirius-dumped)
+      (progn
+        ;; (lisp/init-lisp-base)
+        )
+      )
+  )
+
+(defun lisp/init-lisp-base ()
+  (use-package lisp-mode
+      :diminish (lisp-mode . "LISP")
+      :hook (lisp-mode . linum-relative-toggle)
+      :commands lisp-mode
+      :config
+      )
+  )
+
+(provide 'sirius-lisp)
+
+

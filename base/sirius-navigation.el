@@ -12,9 +12,13 @@
     (use-package smooth-scrolling
         :defer .1    
         :config
-            (smooth-scrolling-mode)    
+            (smooth-scrolling-mode)
+            (setq smooth-scroll-margin 2)    
     )
 )
+
+;;TODO: mouse smooth
+
 
 
 (provide 'sirius-navigation)

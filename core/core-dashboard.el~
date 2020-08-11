@@ -1,0 +1,35 @@
+(defun sirius/init-dashboard ()
+    (if (not sirius-dumped)
+        (progn
+            (sirius/init-dashboard-base)
+        ) 
+    )
+)
+
+(defvar sirius-logo (expand-file-name "logo.png" user-emacs-directory))
+
+(defun sirius/init-dashboard-base ()
+    (use-package dashboard
+
+        :hook
+        (after-init . dashboard-setup-startup-hook) 
+    )
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(provide 'core-dashboard)

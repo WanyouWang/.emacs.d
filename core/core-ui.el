@@ -6,6 +6,7 @@
       (progn
         (sirius//init-theme)
         (sirius//init-linum)
+        (sirius//init-winum)
         (sirius//init-spaceline)
         (sirius//init-all-the-icons)
         (sirius//init-spaceline-all-the-icons)
@@ -46,6 +47,22 @@
     )
 )
 
+(defun sirius//init-winum ()
+  (use-package winum
+    :defer .1  
+    :init
+    ;;TODO: add window number
+    :config 
+      (winum-mode)
+      (setq winum-auto-setup-mode-line t
+            winum-mode-line-position  1
+            winum-format  ""
+            winum-ignored-buffers '(" *which-key*")
+            winum-ignored-buffers-regexp '(" \\*Treemacs-.*")
+            winum-reverse-frame-list nil
+      )
+  )
+)
 ;; (defun sirius//init-highlight ()
 ;;   (global-hl-line-mode t)
 ;;   (use-package highlight-parentheses
@@ -58,6 +75,7 @@
     (use-package solarized-theme
         :demand (not sirius-dumped)
         :config    
+            ;; (load-theme 'solarized-light t) 
             (load-theme 'solarized-dark t) 
     )
   ;;  (use-package spacemacs-theme
@@ -78,14 +96,22 @@
             (spaceline-helm-mode)
             (spaceline-spacemacs-theme)
             (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+            ;; (setq spaceline-toggle-window-number-on-p t)
+            ;; (setq spaceline-toggle-workspace-number-on-p nil)
+             (setq spaceline-window-numbers-unicode t
+                spaceline-workspace-numbers-unicode t)
+              
 ;; (setq spaceline-separator-dir-left '(left . left))
 ;; (setq spaceline-separator-dir-right '(right . right))
-
   (spaceline-compile
     ; left side
-    '(((persp-name
-        workspace-number
-        window-number)
+    '(
+      (
+        (
+        ;; persp-name
+        ;; workspace-number
+        window-number
+        )
        :fallback evil-state
        :face highlight-face
        :priority 100)

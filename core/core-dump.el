@@ -10,6 +10,7 @@
     ,@else)
  )
 
+(require 'core-dashboard)
 (defun sirius/dump-init ()
     (sirius-if-dump
         (progn
@@ -20,7 +21,10 @@
         (lambda ()
         (save-excursion
         (switch-to-buffer "*scratch*")
-        (lisp-interaction-mode)))))
+        (lisp-interaction-mode))))
+        
+        
+        )
         ;; add load-path’s and load autoload files
         ;; (enable-theme 'solarized-dark)
     )

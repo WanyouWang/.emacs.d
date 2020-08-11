@@ -3,10 +3,16 @@
         (progn 
             (sirius/init-smartparens)
             (sirius/init-delsel)
-            (sirius/init-undo-tree)
         ) 
     )
+    (sirius/init-indent)
+    (sirius/init-undo-tree)
     (sirius/init-edit-cover)
+)
+
+(defun sirius/init-indent ()
+    (setq-default tab-width 4
+              indent-tabs-mode nil)
 )
 
 (defun sirius/init-hungry-delete ()

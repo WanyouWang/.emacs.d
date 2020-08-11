@@ -13,6 +13,14 @@
         :defer .1 
         :config 
             (evil-mode) 
+            (setq evil-normal-state-tag " Ⓝ "
+                  evil-insert-state-tag " Ⓘ " 
+                  evil-visual-state-tag " Ⓥ "
+                  evil-replace-state-tag " Ⓡ "
+                  evil-emacs-state-tag " Ⓔ "
+            
+            )
+
     )
 )
 

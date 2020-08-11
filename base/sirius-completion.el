@@ -10,7 +10,7 @@
 
 (defun sirius/init-company ()
   (use-package company
-    :diminish (company-mode . " ⓐ")
+    :diminish (company-mode . " Ⓒ ")
     :hook (prog-mode . company-mode) 
     :init
       (setq company-idle-delay sirius-auto-completion-idle-delay

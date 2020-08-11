@@ -4,6 +4,7 @@
       (progn 
         (sirius/init-helm-base)
         (sirius/init-helm-swoop)
+        (sirius/init-helm-projectile)
       )
     )
 )
@@ -68,6 +69,28 @@
           ("C-k" . 'helm-previous-line)
       )
     )
+)
+
+(defun sirius/init-helm-projectile ()
+  (use-package helm-projectile
+    :commands (helm-projectile-switch-to-buffer
+               helm-projectile-find-dir
+               helm-projectile-dired-find-dir
+               helm-projectile-recentf
+               helm-projectile-find-file
+               helm-projectile-grep
+               helm-projectile
+               helm-projectile-switch-project)
+    :init
+      (sirius/set-key
+        "pf" 'helm-projectile-find-file 
+        "pp" 'helm-projectile-switch-project 
+        "pr" 'helm-projectile-recentf
+        "pd" 'helm-projectile-kill-buffers
+        "pb" 'helm-projectile-switch-to-buffer
+      )
+  
+  )
 )
 
 (defun sirius/helm-find-files (arg)
